@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إجراءات إضافة برنامج في أكاديمية منشآت</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.85);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--accent-primary);
+            color: #0f172a;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1rem;
+        }
+
+        ol {
+            padding-right: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 1.25rem;
+        }
+
+        ul {
+            padding-right: 1.5rem;
+            margin-top: 0.5rem;
+            list-style-type: disc;
+            color: var(--text-muted);
+        }
+
+        .email-link {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-family: sans-serif;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .section-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin: 2rem 0 1rem 0;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1.5rem;
+        }
+
+        .template-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            border-right: 4px solid var(--accent-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            white-space: pre-line;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Return Button -->
+        <a href="index.html" class="back-btn">
+            ➔ العودة إلى الصفحة الرئيسية
+        </a>
+
+        <div class="content-card">
+            <h1>إجراءات إضافة برنامج في أكاديمية منشآت</h1>
+            <p>فيما يخص إجراءات إضافة برنامج في أكاديمية منشآت، يتم اتباع الخطوات التالية:</p>
+
+            <ol>
+                <li>
+                    <strong>طلب المعلومات من مقدم البرنامج وتشمل:</strong>
+                    <ul>
+                        <li>الاسم الثلاثي.</li>
+                        <li>المنصب.</li>
+                        <li>رابط حساب X.</li>
+                        <li>عنوان البرنامج / الورشة.</li>
+                        <li>الأهداف والمحاور.</li>
+                        <li>التاريخ والتوقيت.</li>
+                        <li>عكس المحتوى التدريبي على قالب الأكاديمية (مرفق).</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>طلب المسح الإعلامي للمتحدث</strong> من الزميل فيصل عبر البريد الإلكتروني 
+                    <a href="mailto:fyshebel.t@monshaat.gov.sa" class="email-link">fyshebel.t@monshaat.gov.sa</a> 
+                    مع مشاركة اسم المقدم / المنصب / رابط التويتر.
+                </li>
+
+                <li>
+                    <strong>في حال كان البرنامج حضوريًا،</strong> يتم حجز القاعة عبر تعبئة نموذج الحجز (مرفق) بعد اعتماد المسح الإعلامي (ولا تتطلب هذه الخطوة للبرامج الافتراضية).
+                    <ul>
+                        <li><strong>الخبر:</strong> التنسيق مع الزميلة @Shahad A. Almubarak.</li>
+                        <li><strong>الرياض:</strong> إرسال نموذج الحجز للزميل عايض <a href="mailto:asharaf.c@monshaat.gov.sa" class="email-link">asharaf.c@monshaat.gov.sa</a>، وإرفاق اعتماد الحجز عند رفع الطلب للأكاديمية.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>طلب مراجعة واعتماد المحتوى</strong> من إدارة المحتوى عبر البريد الإلكتروني 
+                    <a href="mailto:Content_management@monshaat.gov.sa" class="email-link">Content_management@monshaat.gov.sa</a>، مع إرفاق كابشن مقترح للنشر.
+                </li>
+
+                <li>
+                    <strong>بعد اعتماد المحتوى،</strong> يتم طلب عكس محتوى الحقيبة التدريبية على قالب الأكاديمية من قبل المقدم، ومن ثم مراجعتها من قبلنا، ثم إرسال طلب إضافة البرنامج إلى أكاديمية منشآت للزملاء عبدالله اليحيى ومحمد العطاس مرفقًا بـ:
+                    <ul>
+                        <li>الحقيبة التدريبية بقالب الأكاديمية.</li>
+                        <li>نموذج طلب إضافة برنامج تدريبي (مرفق).</li>
+                        <li>المحتوى المعتمد من إدارة المحتوى.</li>
+                        <li>وفي حال كان البرنامج حضوريًا، يتم إرفاق نموذج واعتماد حجز القاعة.</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem; color: var(--text-muted);">كما يتم توضيح موضوع البرنامج، والتاريخ، والموقع، وطلب إضافة البرنامج ومشاركة رابط التسجيل في نص البريد الالكتروني.</p>
+                </li>
+
+                <li>
+                    <strong>بعد استلام رابط التسجيل،</strong> يتم مشاركته مع الزميلة @Waad R. Aldalbahi لإعداد المنشور واعتماده، ثم مشاركة المنشور مع أكاديمية منشآت لطلب الدعم في النشر، بالإضافة إلى مشاركته مع مقدم البرنامج.
+                </li>
+            </ol>
+
+            <div class="section-header">قبل تنفيذ البرنامج:</div>
+            <ul>
+                <li>يمكن متابعة أعداد المسجلين من خلال لوحة التحكم من قبلي أو من قبل الزميلة ريوف.</li>
+                <li>يتم إرسال دعوة تقويم (Calendar Invite) لمقدم البرنامج، متضمنةً تفاصيل الموعد والموقع، مع مشاركة الحقيبة التدريبية المعتمدة، والتأكيد على الحضور قبل الموعد بساعة للتجهيز والتنسيق.</li>
+            </ul>
+
+            <div class="section-header">مثال للرسالة في الدعوة للمقدم:</div>
+            <div class="template-box">
+السلام عليكم ورحمة الله وبركاته،
+الأستاذ الكريم/ [اسم المقدم]
+نشكر لكم تعاونكم الكريم، ونتطلع إلى تقديمكم ورشة العمل "[عنوان الورشة]"، والمقرر إقامتها يوم [التاريخ]، من الساعة [الوقت]، في [الموقع].
+
+نأمل منكم التكرم بالحضور قبل موعد الورشة بساعة على الأقل، وذلك لإضافة العرض التقديمي والتأكد من جاهزية الصوتيات والتجهيزات في القاعة بالتنسيق مع الفريق. وسيكون أحد أعضاء فريق مركز الابتكار متواجدًا لاستقبالكم ودعمكم خلال الورشة بإذن الله.
+
+كما نأمل الالتزام بالبدء في الوقت المحدد، واستثمار كامل مدة الورشة، مع إتاحة المجال لاستقبال أسئلة واستفسارات الحضور بين المحاور، وتخصيص استراحة لأداء الصلاة.
+
+وفي حال وجود أي استفسار أو احتياج، يسعدنا الإجابة عنه في أي وقت.
+
+شاكرين لكم تعاونكم، ونتطلع إلى ورشة مثمرة ومميزة.
+            </div>
+        </div>
+
+        <footer>
+            <p>مركز الابتكار &bull; بوابة أدلة وإجراءات العمل الداخلي</p>
+        </footer>
+    </div>
+
+</body>
+</html>
