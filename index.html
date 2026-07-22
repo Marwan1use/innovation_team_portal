@@ -1,77 +1,354 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Team Portal</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Hub Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body{
-            font-family:Arial;
-            background:#f5f5f5;
-            padding:40px;
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --hover-border: #38bdf8;
         }
 
-        h1{
-            color:#1565c0;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .card{
-            background:white;
-            padding:20px;
-            margin:15px 0;
-            border-radius:10px;
-            box-shadow:0 0 10px rgba(0,0,0,.1);
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
         }
 
-        a{
-            display:block;
-            margin:8px 0;
-            color:#1565c0;
-            text-decoration:none;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        a:hover{
-            text-decoration:underline;
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-primary);
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            margin: 2rem auto 3rem auto;
+            max-width: 500px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            backdrop-filter: blur(12px);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .search-input::placeholder {
+            color: #64748b;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e2e8f0;
+        }
+
+        .section-title svg {
+            color: var(--accent-primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.25rem;
+            backdrop-filter: blur(12px);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--hover-border);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .card-arrow {
+            color: #64748b;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .card:hover .card-arrow {
+            color: var(--accent-primary);
+            transform: translateX(3px) translateY(-3px);
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #f1f5f9;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
-
 </head>
-
 <body>
 
-<h1>🚀 Team Services Portal</h1>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-badge">
+                <span>⚡</span> Innovation Hub Portal
+            </div>
+            <h1>Team Knowledge & Resource Portal</h1>
+            <p class="subtitle">A centralized directory for tools, documentation, dashboards, and operational links.</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search links or tools..." onkeyup="filterLinks()">
+            </div>
+        </header>
 
-<div class="card">
-<h2>Development</h2>
+        <!-- Category 1: Workflows & Planning -->
+        <div class="section">
+            <h2 class="section-title">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path></svg>
+                Project Management & Planning
+            </h2>
+            <div class="grid">
+                <a href="https://jira.example.com" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">Jira Innovation Board</div>
+                    <div class="card-desc">Sprint backlog, active epic tracking, and task assignments.</div>
+                </a>
 
-<a href="https://gitlab.company.local">GitLab</a>
+                <a href="https://notion.so/example" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">Team Knowledge Base</div>
+                    <div class="card-desc">Notion workspace for research notes, meeting minutes, and specs.</div>
+                </a>
 
-<a href="https://jenkins.company.local">Jenkins</a>
+                <a href="https://miro.com/example" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">Miro Brainstorming Canvas</div>
+                    <div class="card-desc">Interactive whiteboard for quarterly strategy and product mapping.</div>
+                </a>
+            </div>
+        </div>
 
-<a href="https://sonarqube.company.local">SonarQube</a>
+        <!-- Category 2: Data & Analytics -->
+        <div class="section">
+            <h2 class="section-title">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                Data, Models & Dashboards
+            </h2>
+            <div class="grid">
+                <a href="https://grafana.example.com" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">Grafana Analytics Dashboard</div>
+                    <div class="card-desc">Real-time system telemetry and platform usage metrics.</div>
+                </a>
 
-</div>
+                <a href="https://mlflow.example.com" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🤖</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">ML Model Registry</div>
+                    <div class="card-desc">Tracking active ML experiments, artifacts, and deployment stages.</div>
+                </a>
 
-<div class="card">
+                <a href="https://metabase.example.com" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">Metabase BI Reports</div>
+                    <div class="card-desc">Business intelligence queries, KPIs, and custom SQL dashboards.</div>
+                </a>
+            </div>
+        </div>
 
-<h2>Infrastructure</h2>
+        <!-- Category 3: Repositories & DevOps -->
+        <div class="section">
+            <h2 class="section-title">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                Repositories & Infrastructure
+            </h2>
+            <div class="grid">
+                <a href="https://github.com/example-org" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🐙</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">GitHub Organization</div>
+                    <div class="card-desc">Source code repositories, pull requests, and CI/CD pipelines.</div>
+                </a>
 
-<a href="https://grafana.company.local">Grafana</a>
+                <a href="https://aws.example.com" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">☁️</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">AWS Console</div>
+                    <div class="card-desc">Cloud infrastructure management, staging, and production environments.</div>
+                </a>
 
-<a href="https://prometheus.company.local">Prometheus</a>
+                <a href="https://figma.com/example" target="_blank" class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-title">Figma UI/UX Designs</div>
+                    <div class="card-desc">Design systems, prototypes, and UI component libraries.</div>
+                </a>
+            </div>
+        </div>
 
-<a href="https://argocd.company.local">ArgoCD</a>
+        <!-- Footer -->
+        <footer>
+            <p>Innovation Team Portal &bull; Updated for GitHub Pages &bull; Maintained by Team Lead</p>
+        </footer>
+    </div>
 
-</div>
+    <script>
+        function filterLinks() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
 
-<div class="card">
-
-<h2>Documentation</h2>
-
-<a href="https://wiki.company.local">Wiki</a>
-
-<a href="https://runbooks.company.local">Runbooks</a>
-
-</div>
-
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+                if (title.includes(input) || desc.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
