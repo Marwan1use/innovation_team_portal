@@ -97,15 +97,19 @@
             color: var(--text-muted);
         }
 
-        .email-link {
+        .email-link, .external-link {
             color: var(--accent-primary);
             text-decoration: none;
+            word-break: break-all;
+        }
+
+        .email-link {
             font-family: sans-serif;
             direction: ltr;
             display: inline-block;
         }
 
-        .email-link:hover {
+        .email-link:hover, .external-link:hover {
             text-decoration: underline;
         }
 
@@ -128,6 +132,15 @@
             white-space: pre-line;
             color: #e2e8f0;
             font-size: 0.95rem;
+        }
+
+        .download-box {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px dashed rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            color: #f8fafc;
         }
 
         footer {
@@ -218,6 +231,13 @@
 وفي حال وجود أي استفسار أو احتياج، يسعدنا الإجابة عنه في أي وقت.
 
 شاكرين لكم تعاونكم، ونتطلع إلى ورشة مثمرة ومميزة.
+            </div>
+
+            <div class="download-box">
+                📁 لتحميل الملفات المرتبطة بهذا الطلب اضغط على الرابط التالي في ايثاق: <br>
+                <a href="https://ethaq.monshaat.gov.sa/index.php/apps/files/files/31011792?dir=/Fast%20Access/workshops%20%26%20camps" target="_blank" class="external-link" dir="ltr">
+                    https://ethaq.monshaat.gov.sa/index.php/apps/files/files/31011792?dir=/Fast%20Access/workshops%20%26%20camps
+                </a>
             </div>
         </div>
 
