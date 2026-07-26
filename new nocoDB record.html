@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل سجل جديد | New NocoDB Record</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --hover-border: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--accent-primary);
+            color: #0f172a;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        h1.title-ar {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2.title-en {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.25rem;
+            backdrop-filter: blur(12px);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--hover-border);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .card-arrow {
+            color: #64748b;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .card:hover .card-arrow {
+            color: var(--accent-primary);
+            transform: translateX(-3px) translateY(-3px);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            h1.title-ar { font-size: 1.75rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Return Button -->
+        <a href="index.html" class="back-btn">
+            ➔ العودة إلى الصفحة الرئيسية | Return to Main Page
+        </a>
+
+        <!-- Header Titles in Arabic and English -->
+        <header>
+            <h1 class="title-ar">نماذج تسجيل سجل جديد (NocoDB)</h1>
+            <h2 class="title-en">New NocoDB Record Forms</h2>
+        </header>
+
+        <!-- Forms Grid -->
+        <div class="grid">
+            <!-- Form 1 -->
+            <a href="https://ic-nocodb.monshaat.gov.sa/#/nc/form/621fcf4d-010c-411d-8ca6-80ff64c3a7bd" target="_blank" class="card">
+                <div class="card-header">
+                    <div class="card-icon">👤</div>
+                    <span class="card-arrow">↖</span>
+                </div>
+                <div class="card-title">نموذج تسجيل مستفيد جديد</div>
+            </a>
+
+            <!-- Form 2 -->
+            <a href="https://ic-nocodb.monshaat.gov.sa/#/nc/form/b7ed11aa-0f8c-4267-97d3-7ab3412978c0" target="_blank" class="card">
+                <div class="card-header">
+                    <div class="card-icon">🏢</div>
+                    <span class="card-arrow">↖</span>
+                </div>
+                <div class="card-title">نموذج تسجيل منشأة</div>
+            </a>
+
+            <!-- Form 3 -->
+            <a href="https://ic-nocodb.monshaat.gov.sa/#/nc/form/4cae31f0-05ed-4ac8-8017-377dce9e51ac" target="_blank" class="card">
+                <div class="card-header">
+                    <div class="card-icon">💡</div>
+                    <span class="card-arrow">↖</span>
+                </div>
+                <div class="card-title">نموذج تسجيل استشارة</div>
+            </a>
+
+            <!-- Form 4 -->
+            <a href="https://ic-nocodb.monshaat.gov.sa/#/nc/form/80213682-266e-4e1b-82a3-36d0dce74499" target="_blank" class="card">
+                <div class="card-header">
+                    <div class="card-icon">📅</div>
+                    <span class="card-arrow">↖</span>
+                </div>
+                <div class="card-title">نموذج تسجيل فعالية \ ورشة عمل \ معسكر \ لقاء \ زيارة</div>
+            </a>
+
+            <!-- Form 5 -->
+            <a href="https://ic-nocodb.monshaat.gov.sa/#/nc/form/ab3ca495-65b6-4784-9c00-2fa6a80ec17d" target="_blank" class="card">
+                <div class="card-header">
+                    <div class="card-icon">🚀</div>
+                    <span class="card-arrow">↖</span>
+                </div>
+                <div class="card-title">نموذج تسجيل تبني تقنية</div>
+            </a>
+
+            <!-- Form 6 -->
+            <a href="https://ic-nocodb.monshaat.gov.sa/#/nc/form/4cf00ebc-86bb-410a-b193-bd73c6ae89f6" target="_blank" class="card">
+                <div class="card-header">
+                    <div class="card-icon">📦</div>
+                    <span class="card-arrow">↖</span>
+                </div>
+                <div class="card-title">نموذج تسجيل منتج أولي \ نموذج أولي</div>
+            </a>
+        </div>
+
+        <footer>
+            <p>مركز الابتكار &bull; NocoDB Entry Forms Portal</p>
+        </footer>
+    </div>
+
+</body>
+</html>
